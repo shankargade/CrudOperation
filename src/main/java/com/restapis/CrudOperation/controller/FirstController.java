@@ -57,6 +57,23 @@ public class FirstController {
     }
 
 
+    @DeleteMapping("/deleteEmployee/{empID}")
+    public String deleteEmployeOne(@PathVariable int empID) {
+
+        Optional<Employee> employee1 = employeeRepo.findById(empID);
+        if (employee1.isPresent()) {
+            employeeRepo.deleteById(empID);
+
+            return "employee deleted successfully";
+        } else {
+
+            return Message.NOT_FOUND;
+        }
+
+
+    }
+
+
     // Search operation Read operation
     // We can find the existing employee with different parameters like empid, empname etc.
     // URL -->http://localhost:8080/finbyID/2
