@@ -12,7 +12,7 @@ import java.util.Optional;
 @Repository
 public interface EmployeeRepo extends JpaRepository<Employee, Integer> {
     @Query(value = "select * from employee where name like :#{#empName}%", nativeQuery = true)
-    List<Optional<Employee>> findByName( @Param("empName") String empName);
+    List<Optional<Employee>> findByName(@Param("empName") String empName);
 
     @Query(value = "select * from employee where city like :#{#empCity}%", nativeQuery = true)
    List <Optional<Employee>> findByCity(@Param("empCity") String empCity);
