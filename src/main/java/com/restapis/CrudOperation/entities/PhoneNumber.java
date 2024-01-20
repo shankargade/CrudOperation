@@ -32,6 +32,14 @@ public class PhoneNumber {
     @JsonIgnore
     private Employee employee;
 
+
+        public String toString3() {
+        return "PhoneNumber{" +
+                "phoneNumberId=" + phoneNumberId +
+                ", mobileNumber=" + mobileNumber +
+                '}';
+    }
+
     @Override
     public String toString() {
         return "PhoneNumber{" +
